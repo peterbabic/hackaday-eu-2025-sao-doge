@@ -1,0 +1,29 @@
+G04 #@! TF.GenerationSoftware,KiCad,Pcbnew,8.0.7*
+G04 #@! TF.CreationDate,2025-01-23T10:02:07+01:00*
+G04 #@! TF.ProjectId,hackaday-eu-2025-sao-doge,6861636b-6164-4617-992d-65752d323032,rev?*
+G04 #@! TF.SameCoordinates,Original*
+G04 #@! TF.FileFunction,Copper,L2,Bot*
+G04 #@! TF.FilePolarity,Positive*
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW 8.0.7) date 2025-01-23 10:02:07*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+G04 #@! TA.AperFunction,ComponentPad*
+%ADD10R,1.700000X1.700000*%
+G04 #@! TD*
+G04 #@! TA.AperFunction,ComponentPad*
+%ADD11O,1.700000X1.700000*%
+G04 #@! TD*
+G04 APERTURE END LIST*
+D10*
+X137500000Y-61000000D03*
+D11*
+X137500000Y-63540000D03*
+X134960000Y-61000000D03*
+X134960000Y-63540000D03*
+X132420000Y-61000000D03*
+X132420000Y-63540000D03*
+M02*
