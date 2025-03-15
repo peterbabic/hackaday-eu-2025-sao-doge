@@ -2,10 +2,9 @@
 
 // Define the GPIO pins to use (Raspberry Pi Pico has 26 GPIO pins, 0-25)
 // Excluding some pins that might be used for other purposes
-const int NUM_PINS = 20;
+const int NUM_PINS = 25;
 const int GPIO_PINS[NUM_PINS] = {
-  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 
-  10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+  3, 5, 7, 18, 20, 22
 };
 
 void setup() {
@@ -26,12 +25,12 @@ void loop() {
   for (int i = 0; i < NUM_PINS; i++) {
     digitalWrite(GPIO_PINS[i], HIGH);
   }
-  delay(1000); // Wait for a second
+  delay(6000); // Wait for a second
   
   // Turn all GPIOs off
   Serial.println("All GPIOs OFF");
   for (int i = 0; i < NUM_PINS; i++) {
     digitalWrite(GPIO_PINS[i], LOW);
   }
-  delay(1000); // Wait for a second
+  delay(6000); // Wait for a second
 }
