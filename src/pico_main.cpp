@@ -20,17 +20,25 @@ void setup() {
 }
 
 void loop() {
-  // Turn all GPIOs on
-  Serial.println("All GPIOs ON");
+  // Turn on GPIOs one by one in sequence
+  Serial.println("Turning GPIOs on in sequence");
   for (int i = 0; i < NUM_PINS; i++) {
     digitalWrite(GPIO_PINS[i], HIGH);
+    Serial.print("GPIO ");
+    Serial.print(GPIO_PINS[i]);
+    Serial.println(" ON");
+    delay(500); // Wait between turning on each pin
   }
-  delay(6000); // Wait for a second
+  delay(2000); // Keep all pins on for a moment
   
-  // Turn all GPIOs off
-  Serial.println("All GPIOs OFF");
+  // Turn off GPIOs one by one in sequence
+  Serial.println("Turning GPIOs off in sequence");
   for (int i = 0; i < NUM_PINS; i++) {
     digitalWrite(GPIO_PINS[i], LOW);
+    Serial.print("GPIO ");
+    Serial.print(GPIO_PINS[i]);
+    Serial.println(" OFF");
+    delay(500); // Wait between turning off each pin
   }
-  delay(6000); // Wait for a second
+  delay(2000); // Keep all pins off for a moment
 }
