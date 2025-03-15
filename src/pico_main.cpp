@@ -1,21 +1,37 @@
 #include <Arduino.h>
 
-// LED_PIN is defined in platformio.ini as GPIO 25 (Pico's built-in LED)
+// Define the GPIO pins to use (Raspberry Pi Pico has 26 GPIO pins, 0-25)
+// Excluding some pins that might be used for other purposes
+const int NUM_PINS = 20;
+const int GPIO_PINS[NUM_PINS] = {
+  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 
+  10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+};
 
 void setup() {
   // Initialize serial communication
   Serial.begin(115200);
-  Serial.println("Pico LED Blink Starting");
+  Serial.println("Pico GPIO Blink Starting");
   
-  // Initialize the LED pin as an output
-  pinMode(LED_PIN, OUTPUT);
+  // Initialize all GPIO pins as outputs
+  for (int i = 0; i < NUM_PINS; i++) {
+    pinMode(GPIO_PINS[i], OUTPUT);
+    digitalWrite(GPIO_PINS[i], LOW); // Start with all LEDs off
+  }
 }
 
 void loop() {
-  digitalWrite(LED_PIN, HIGH);   // Turn the LED on
-  Serial.println("LED ON");
-  delay(1000);                   // Wait for a second
-  digitalWrite(LED_PIN, LOW);    // Turn the LED off
-  Serial.println("LED OFF");
-  delay(1000);                   // Wait for a second
+  // Turn all GPIOs on
+  Serial.println("All GPIOs ON");
+  for (int i = 0; i < NUM_PINS; i++) {
+    digitalWrite(GPIO_PINS[i], HIGH);
+  }
+  delay(1000); // Wait for a second
+  
+  // Turn all GPIOs off
+  Serial.println("All GPIOs OFF");
+  for (int i = 0; i < NUM_PINS; i++) {
+    digitalWrite(GPIO_PINS[i], LOW);
+  }
+  delay(1000); // Wait for a second
 }
